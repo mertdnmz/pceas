@@ -1,0 +1,36 @@
+#N
+@7
+
+#T
+@3
+
+#Field Prime
+@4973
+
+#Protocol ( Format : @1 (PCEPS) OR @2 (PCEAS) OR @3 (PCEAS_WITH_CIRCUIT_RANDOMIZATION) )
+@2
+
+#Inputs (Format : List of @partyID @label @value   ---   Each triple must be on a separate line)
+@1 @a0 @0
+@1 @a1 @0
+@1 @a2 @1
+@3 @b0 @1
+@3 @b1 @1
+@3 @b2 @0
+@1 @one @1
+
+#Actively corrupted (Format : List of @partyID   ---   Each partyID must be on a separate line)
+@2
+@4
+
+#Data user (Format : @partyID   ---   Single value, not a list)
+@1
+
+#Comparator (Format : @true OR @false [@bitlength @labelA @labelB @labelOne]:Required if @true )
+@true @3 @a @b @one
+
+#Circuit description string
+@
+
+#Sequencial run (Format : @true OR @false [@labelPrevRunResult @nextRunCircuitDesc]:Required if @true )
+@false [@ @]

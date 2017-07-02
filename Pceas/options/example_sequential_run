@@ -1,0 +1,48 @@
+#N
+@10
+
+#T
+@4
+
+#Field Prime
+@100000007
+
+#Protocol ( Format : @1 (PCEPS) OR @2 (PCEAS) OR @3 (PCEAS_WITH_CIRCUIT_RANDOMIZATION) )
+@2
+
+#Inputs (Format : List of @partyID @label @value   ---   Each triple must be on a separate line)
+@1 @income1 @800
+@1 @bdrug1 @0
+@2 @income2 @400
+@2 @bdrug2 @1
+@3 @income3 @600
+@3 @bdrug3 @1
+@4 @income4 @0
+@4 @bdrug4 @1
+@5 @income5 @500
+@5 @bdrug5 @1
+@6 @income6 @600
+@6 @bdrug6 @0
+@7 @income7 @200
+@7 @bdrug7 @1
+@8 @income8 @300
+@8 @bdrug8 @0
+@9 @income9 @500
+@9 @bdrug9 @1
+@10 @income10 @700
+@10 @bdrug10 @1
+
+#Actively corrupted (Format : List of @partyID   ---   Each partyID must be on a separate line)
+
+
+#Data user (Format : @partyID   ---   Single value, not a list)
+@1
+
+#Comparator (Format : @true OR @false [@bitlength @labelA @labelB @labelOne]:Required if @true )
+@false
+
+#Circuit description string
+@bdrug1*income1+bdrug2*income2+bdrug3*income3+bdrug4*income4+bdrug5*income5+bdrug6*income6+bdrug7*income7+bdrug8*income8+bdrug9*income9+bdrug10*income10
+
+#Sequential run (Format : @true OR @false [@labelPrevRunResult @nextRunCircuitDesc]:Required if @true )
+@true @prevresult @bdrug1 * ((income1 + (prevresult.-1)) * (income1 + (prevresult.-1))) + bdrug2 * ((income2 + (prevresult.-1)) * (income2 + (prevresult.-1))) + bdrug3 * ((income3 + (prevresult.-1)) * (income3 + (prevresult.-1))) + bdrug4 * ((income4 + (prevresult.-1)) * (income4 + (prevresult.-1))) + bdrug5 * ((income5 + (prevresult.-1)) * (income5 + (prevresult.-1))) + bdrug6 * ((income6 + (prevresult.-1)) * (income6 + (prevresult.-1))) + bdrug7 * ((income7 + (prevresult.-1)) * (income7 + (prevresult.-1))) + bdrug8 * ((income8 + (prevresult.-1)) * (income8 + (prevresult.-1))) + bdrug9 * ((income9 + (prevresult.-1)) * (income9 + (prevresult.-1))) + bdrug10 * ((income10 + (prevresult.-1)) * (income10 + (prevresult.-1)))
