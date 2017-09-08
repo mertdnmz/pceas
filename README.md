@@ -48,4 +48,5 @@ There is a bug that effects a specific case. When all conditions below are satis
 1. protocol = CEAS_with_circuit_randomization
 2. TEST CASES enabled and one or more parties defined as corrupt
 3. circuit has mult gate which has input that is output of a mult gate [for ex.  @x1*x1*x2  -  NOTE : @x1*x1+x2*x2 IS OK ]
+
 a wrong result is computed.
